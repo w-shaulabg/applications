@@ -16,8 +16,6 @@
     Email(必須)<input type="email" name="email" value="" placeholder="Email"><br>
     お問合せ内容(必須)<textarea cols="40" rows="8" name="content" placeholder="お問合せ内容(1000文字までをお書きください。)"></textarea><br>
     <input type="submit" name="confirm" value="送信"><br>
-
-
   </form>
 </body>
 

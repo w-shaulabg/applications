@@ -1,5 +1,4 @@
 <?php
-//echo "工事中";
 
 $dbUserName = "root";
 $dbPassword = "password";
@@ -9,13 +8,7 @@ $sql = "SELECT title, content FROM contacts";
 $statement = $pdo->prepare($sql);
 $statement->execute();
 $contacts = $statement->fetchAll(PDO::FETCH_ASSOC);
-//var_dump($contacts);
 
-// $name = "お問合せタイトル";
-// $body = "お問合せ内容";
-
-// $contact_detail = [];
-// $contact_title = [];
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +28,7 @@ if (empty($contact)) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <form action="index.php" method="post">

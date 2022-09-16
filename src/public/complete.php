@@ -13,7 +13,6 @@ $dbUserName = 'root';
 $dbPassword = 'password';
 $pdo = new PDO(
   'mysql:host=mysql; dbname=contactform; charset=utf8',$dbUserName, $dbPassword);
-//INSERT INTO　contents はカラム名と合わせる。
   $stmt = $pdo->prepare("INSERT INTO contacts (title, email, content)
    VALUES (:title, :email, :content)");//並び順にカラムに追加
    
@@ -22,7 +21,6 @@ $pdo = new PDO(
   $stmt->bindParam( ':content', $content, PDO::PARAM_STR);
   $res = $stmt->execute();
 
-  //var_dump($error);
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +32,6 @@ $pdo = new PDO(
 </head>
 
 <body>
-
   <div>
     <?php if (!empty($errors)): ?>
     <?php foreach ($errors as $error):?>
@@ -42,14 +39,12 @@ $pdo = new PDO(
     <?php endforeach;?>
     <a href="index.php">送信画面へ</a>
     <?php endif;?>
-
     <?php if (empty($errors)): ?>
     <h2>送信完了！！</h2>
     <a href="index.php">送信画面へ</a><br><br>
     <a href="history.php">送信履歴へ</a>
     <?php endif;?>
     <div>
-
 </body>
 
 </html>
