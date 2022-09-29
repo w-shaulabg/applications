@@ -10,29 +10,27 @@ $statement->execute();
 $contacts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
-<font size="5"><b>送信履歴</b></font><br><br><br>
 
-</html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>送信履歴</title>
+</head>
 
-<?php
-foreach ($contacts as $contact) {
-    echo $contact['title'] . "<br>";
-    echo $contact['content'] . "<br>";
-    echo "-----------------------------------------------" . "<br>";
-}
-if (empty($contact)) {
-  echo "送信履歴はありません。";
-}
-
-?>
-
-<!DOCTYPE html>
-<html lang="ja">
-<form action="index.php" method="post">
-  <br><a href="index.php">戻る</a>
-</form>
+<body>
+  <div class="container">
+    <h2>送信履歴</h2>
+    <?php foreach ($contacts as $contact): ?>
+    <h3 class="color: blue;"><?php echo $contact['title']; ?></h3>
+    <p><?php echo $contact['content'] .
+            '<br>' .
+            '----------------------------------------------------------------------'; ?></p>
+    <?php endforeach; ?>
+    <a href="./index.php">戻る</a>
+  </div>
+</body>
 
 </html>

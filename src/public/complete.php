@@ -1,8 +1,8 @@
 <?php
 
-$title =  $_POST["title"];
-$email = $_POST["email"];
-$content = $_POST["content"];
+$title = filter_input(INPUT_POST, 'title');
+$email = filter_input(INPUT_POST, 'email');
+$content = filter_input(INPUT_POST, 'content');
 
 $errors = [];
 if (empty($title)||empty($email)||empty($content)) {
