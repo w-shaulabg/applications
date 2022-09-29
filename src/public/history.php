@@ -11,18 +11,6 @@ $contacts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<?php
-// foreach ($contacts as $contact) {
-//     echo $contact['title'] . "<br>";
-//     echo $contact['content'] . "<br>";
-//     echo "-----------------------------------------------" . "<br>";
-// }
-// if (empty($contact)) {
-//   echo "送信履歴はありません。";
-// }
-
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
